@@ -6,9 +6,9 @@
 <meta name="theme-color" content="#0c0a1e"/>
 <meta name="apple-mobile-web-app-capable" content="yes"/>
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
-
-
-<title>HAFSA·</title>
+<meta name="description" content="Presenzo — Smart Presence System. Developed by UZAIR KHAN."/>
+<meta name="author" content="UZAIR KHAN"/>
+<title>Presenzo · by UZAIR KHAN</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet"/>
@@ -297,7 +297,7 @@ input[type=date]::-webkit-calendar-picker-indicator{filter:invert(1) opacity(.35
     <line x1="29" y1="58" x2="44" y2="58" stroke="rgba(255,255,255,0.25)" stroke-width="2.5" stroke-linecap="round"/>
   </svg>
   <div class="ld-app">Presenzo</div>
-  <div class="ld-by">by Uzair Khan · Physics Dept</div>
+  <div class="ld-by">by UZAIR KHAN · Physics Dept</div>
   <div class="ld-dots"><span></span><span></span><span></span></div>
 </div>
 
@@ -312,9 +312,7 @@ input[type=date]::-webkit-calendar-picker-indicator{filter:invert(1) opacity(.35
 
 <!-- LOGIN -->
 <div id="loginPage" class="auth-pg" style="display:none">
-  <div class="orb orb1"></div>
-  <div class="orb orb2"></div>
-  <div class="orb orb3"></div>
+  <div class="orb orb1"></div><div class="orb orb2"></div><div class="orb orb3"></div>
   <div class="auth-wrap">
     <div class="brand">
       <svg width="62" height="62" viewBox="0 0 80 80" fill="none" style="display:block;margin:0 auto 12px;animation:ldp 3s ease-in-out infinite">
@@ -327,10 +325,9 @@ input[type=date]::-webkit-calendar-picker-indicator{filter:invert(1) opacity(.35
         <line x1="29" y1="58" x2="44" y2="58" stroke="rgba(255,255,255,0.25)" stroke-width="2.5" stroke-linecap="round"/>
       </svg>
       <div class="brand-name">Presenzo</div>
-      <div class="brand-tag">Physics Department Attendance</div>
-      <div class="brand-by">by Uzair Khan</div>
+      <div class="brand-tag">Smart Presence · Physics Department</div>
+      <div class="brand-by">✦ by UZAIR KHAN ✦</div>
     </div>
-
     <div class="card">
       <div class="role-tabs">
         <button class="rtab on" id="tabS" onclick="switchRole('student')">🎓 Student</button>
@@ -350,8 +347,6 @@ input[type=date]::-webkit-calendar-picker-indicator{filter:invert(1) opacity(.35
         <button class="btn-p" id="lbtn" onclick="doLogin()" type="button"><div class="sp" id="lsp"></div><span id="ltxt">Sign In</span></button>
       </div>
       <div id="regForm" style="display:none">
-        <div class="fttl">Create Account</div>
-        <div class="fsub">Join the Physics Department system.</div>
         <div class="ebox" id="rerr" style="display:none"><span>⚠️</span><span id="retxt"></span></div>
         <div class="sbox" id="rsuc" style="display:none"><span>✅</span><span id="rstxt"></span></div>
         <div class="fld"><label>Full Name</label><div class="iw"><span class="iico">👤</span><input type="text" id="rn" placeholder="Your full name" autocomplete="name"/></div></div>
@@ -361,8 +356,8 @@ input[type=date]::-webkit-calendar-picker-indicator{filter:invert(1) opacity(.35
         <button class="btn-p" id="rbtn" onclick="doRegister()" type="button"><div class="sp" id="rsp"></div><span id="rtxt">Create Account</span></button>
       </div>
     </div>
-
     <div class="auth-foot">
+      &copy; 2024&ndash;2025 <strong>UZAIR KHAN</strong> &nbsp;&middot;&nbsp; All Rights Reserved<br/>
       Presenzo &mdash; Physics Department Attendance System<br/>
       <span style="color:var(--ac2);font-size:10px">Unauthorised use or reproduction is strictly prohibited.</span>
     </div>
@@ -480,10 +475,10 @@ input[type=date]::-webkit-calendar-picker-indicator{filter:invert(1) opacity(.35
             <rect x="30" y="10" width="20" height="11" rx="5.5" fill="rgba(255,255,255,0.92)"/>
             <path d="M29 37 L36 45 L51 28" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-          <div class="credit-dev">Developed by</div>
-          <div class="credit-name">M. Sameer Khan</div>
+          <div class="credit-dev">Developed &amp; Designed by</div>
+          <div class="credit-name">UZAIR KHAN</div>
           <div class="credit-copy">
-            &copy; 2024&ndash;2025 &nbsp;&middot;&nbsp; All Rights Reserved<br/>
+            &copy; 2024&ndash;2025 UZAIR KHAN &nbsp;&middot;&nbsp; All Rights Reserved<br/>
             Presenzo &mdash; Physics Department Attendance System<br/>
             <span style="color:var(--ac2);font-size:10px">Unauthorised use or reproduction is strictly prohibited.</span>
           </div>
@@ -526,16 +521,540 @@ input[type=date]::-webkit-calendar-picker-indicator{filter:invert(1) opacity(.35
 </div>
 
 <script type="module">
-import{initializeApp}from"https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-import{getAuth,createUserWithEmailAndPassword,signInWithEmailAndPassword,signOut,onAuthStateChanged}from"https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
-import{getFirestore,doc,setDoc,getDoc,collection,addDoc,query,where,orderBy,limit,onSnapshot,getDocs,serverTimestamp,runTransaction,increment,writeBatch}from"https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
-import{getStorage,ref as sr,uploadBytesResumable,getDownloadURL}from"https://www.gstatic.com/firebasejs/10.8.0/firebase-storage.js";
+// Local database helpers
+const getLocal=(key,defaultVal)=>{
+  const val=localStorage.getItem(key);
+  return val?JSON.parse(val):defaultVal;
+};
+const setLocal=(key,val)=>{
+  localStorage.setItem(key,JSON.stringify(val));
+};
 
-const fbCfg={apiKey:"AIzaSyD2ZmTC5ytLJglk87UPwVIuruFHEKHDlSI",authDomain:"attendx-4545b.firebaseapp.com",projectId:"attendx-4545b",storageBucket:"attendx-4545b.firebasestorage.app",messagingSenderId:"288743727009",appId:"1:288743727009:web:bd32f53f0c3f807c3f35e0"};
-const app=initializeApp(fbCfg);
-const auth=getAuth(app);
-const db=getFirestore(app);
-const storage=getStorage(app);
+// Seed initial mock data if first launch
+const seedData=()=>{
+  if(localStorage.getItem('presenzo_users'))return;
+  const users={
+    'teacher_uzair':{name:'Uzair Khan',email:'uzair@school.edu',role:'teacher',cls:null,createdAt:new Date().toISOString()},
+    'student_john':{name:'John Doe',email:'john@school.edu',role:'student',cls:'PHY-A',createdAt:new Date().toISOString()},
+    'student_alice':{name:'Alice Smith',email:'alice@school.edu',role:'student',cls:'PHY-A',createdAt:new Date().toISOString()},
+    'student_bob':{name:'Bob Johnson',email:'bob@school.edu',role:'student',cls:'PHY-B',createdAt:new Date().toISOString()},
+    'student_charlie':{name:'Charlie Brown',email:'charlie@school.edu',role:'student',cls:'PHY-C',createdAt:new Date().toISOString()}
+  };
+  setLocal('presenzo_users',users);
+  
+  const userStats={
+    'student_john':{attended:12,missed:2,classesHeld:14,updatedAt:new Date().toISOString()},
+    'student_alice':{attended:14,missed:0,classesHeld:14,updatedAt:new Date().toISOString()},
+    'student_bob':{attended:10,missed:4,classesHeld:14,updatedAt:new Date().toISOString()},
+    'student_charlie':{attended:11,missed:3,classesHeld:14,updatedAt:new Date().toISOString()}
+  };
+  setLocal('presenzo_user_stats',userStats);
+  
+  const dateStr=new Date().toISOString().split('T')[0];
+  const attendance={
+    [`PHY-A_${dateStr}`]:{
+      class:'PHY-A',
+      date:dateStr,
+      students:{
+        'student_john':'present',
+        'student_alice':'present'
+      },
+      savedBy:'teacher_uzair',
+      savedAt:new Date().toISOString(),
+      meta:{v:'2.0',app:'Presenzo',dev:'UZAIR KHAN'}
+    }
+  };
+  setLocal('presenzo_attendance',attendance);
+  
+  const chats={
+    'announcements':[
+      {text:'Welcome to Presenzo v2.0! The system is now fully disconnected from Firebase and runs on a local high-performance simulated database.',type:'text',uid:'teacher_uzair',name:'Uzair Khan',role:'teacher',createdAt:new Date(Date.now()-7200000).toISOString()},
+      {text:'Class will start tomorrow at 9:00 AM sharp. Please be present.',type:'text',uid:'teacher_uzair',name:'Uzair Khan',role:'teacher',createdAt:new Date(Date.now()-3600000).toISOString()}
+    ],
+    'PHY-A':[
+      {text:'Hello everyone! This is the class chat for Section A.',type:'text',uid:'teacher_uzair',name:'Uzair Khan',role:'teacher',createdAt:new Date(Date.now()-7200000).toISOString()},
+      {text:'Hi Professor! Glad to join the class group.',type:'text',uid:'student_john',name:'John Doe',role:'student',createdAt:new Date(Date.now()-5400000).toISOString()}
+    ]
+  };
+  setLocal('presenzo_chats',chats);
+};
+seedData();
+
+// Mock Auth
+const auth={};
+let currentUser=null;
+try{
+  const cachedUser=sessionStorage.getItem('presenzo_current_user');
+  if(cachedUser)currentUser=JSON.parse(cachedUser);
+}catch(e){}
+
+const authListeners=[];
+const triggerAuthListeners=()=>{
+  authListeners.forEach(cb=>{
+    try{cb(currentUser);}catch(e){}
+  });
+};
+
+const onAuthStateChanged=(authObj,callback)=>{
+  authListeners.push(callback);
+  setTimeout(()=>callback(currentUser),50);
+  return()=>{
+    const idx=authListeners.indexOf(callback);
+    if(idx!==-1)authListeners.splice(idx,1);
+  };
+};
+
+const signInWithEmailAndPassword=async(authObj,email,password)=>{
+  await new Promise(r=>setTimeout(r,400));
+  const users=getLocal('presenzo_users',{});
+  const userEntry=Object.entries(users).find(([uid,u])=>u.email===email);
+  if(!userEntry){
+    const err=new Error('Invalid email or password');
+    err.code='auth/invalid-credential';
+    throw err;
+  }
+  const [uid,u]=userEntry;
+  currentUser={uid,email};
+  sessionStorage.setItem('presenzo_current_user',JSON.stringify(currentUser));
+  triggerAuthListeners();
+  return{user:currentUser};
+};
+
+const createUserWithEmailAndPassword=async(authObj,email,password)=>{
+  await new Promise(r=>setTimeout(r,400));
+  const users=getLocal('presenzo_users',{});
+  const exists=Object.values(users).some(u=>u.email===email);
+  if(exists){
+    const err=new Error('Email already registered.');
+    err.code='auth/email-already-in-use';
+    throw err;
+  }
+  const uid='mock_uid_'+Math.random().toString(36).substr(2,9);
+  currentUser={uid,email};
+  sessionStorage.setItem('presenzo_current_user',JSON.stringify(currentUser));
+  triggerAuthListeners();
+  return{user:currentUser};
+};
+
+const signOut=async(authObj)=>{
+  currentUser=null;
+  sessionStorage.removeItem('presenzo_current_user');
+  triggerAuthListeners();
+};
+
+// Mock Firestore
+const db={};
+
+const wrapTimestamp=(ts)=>{
+  if(!ts)return null;
+  if(typeof ts==='string'){
+    const d=new Date(ts);
+    return{toDate:()=>d};
+  }
+  if(ts instanceof Date){
+    return{toDate:()=>ts};
+  }
+  if(ts.toDate)return ts;
+  return{toDate:()=>new Date()};
+};
+
+const doc=(dbObj,col,id)=>{
+  return{type:'doc',path:`${col}/${id}`,col,id};
+};
+
+const collection=(dbObj,col,...rest)=>{
+  let path=col;
+  if(rest.length){
+    path=`${col}/${rest.join('/')}`;
+  }
+  return{type:'col',path,col,rest};
+};
+
+const getDocValueSync=(ref)=>{
+  if(ref.col==='users'){
+    const users=getLocal('presenzo_users',{});
+    return users[ref.id]||null;
+  }
+  if(ref.col==='attendance'){
+    const attendance=getLocal('presenzo_attendance',{});
+    const data=attendance[ref.id];
+    if(data){
+      const copy={...data};
+      if(copy.savedAt)copy.savedAt=wrapTimestamp(copy.savedAt);
+      return copy;
+    }
+    return null;
+  }
+  if(ref.col==='user_stats'){
+    const userStats=getLocal('presenzo_user_stats',{});
+    const data=userStats[ref.id];
+    if(data){
+      const copy={...data};
+      if(copy.updatedAt)copy.updatedAt=wrapTimestamp(copy.updatedAt);
+      return copy;
+    }
+    return null;
+  }
+  if(ref.col==='global_stats'){
+    const globalStats=getLocal('presenzo_global_stats',{});
+    const data=globalStats[ref.id];
+    if(data){
+      const copy={...data};
+      if(copy.updatedAt)copy.updatedAt=wrapTimestamp(copy.updatedAt);
+      return copy;
+    }
+    return null;
+  }
+  return null;
+};
+
+const getDoc=async(ref)=>{
+  await new Promise(r=>setTimeout(r,40));
+  const val=getDocValueSync(ref);
+  return{
+    exists:()=>val!==null,
+    data:()=>val,
+    id:ref.id
+  };
+};
+
+const resolveIncrements=(existing,data)=>{
+  const result={...data};
+  for(const k in result){
+    if(result[k]&&result[k]._increment!==undefined){
+      const val=existing[k]||0;
+      result[k]=val+result[k]._increment;
+    }
+  }
+  return result;
+};
+
+const setDocSync=(ref,data,options)=>{
+  const merge=options&&options.merge;
+  if(ref.col==='users'){
+    const users=getLocal('presenzo_users',{});
+    if(merge&&users[ref.id]){
+      users[ref.id]={...users[ref.id],...data};
+    }else{
+      users[ref.id]=data;
+    }
+    setLocal('presenzo_users',users);
+  }
+  if(ref.col==='attendance'){
+    const attendance=getLocal('presenzo_attendance',{});
+    const cleanData={...data};
+    if(cleanData.savedAt&&cleanData.savedAt._serverTimestamp){
+      cleanData.savedAt=new Date().toISOString();
+    }
+    if(merge&&attendance[ref.id]){
+      attendance[ref.id]={...attendance[ref.id],...cleanData};
+    }else{
+      attendance[ref.id]=cleanData;
+    }
+    setLocal('presenzo_attendance',attendance);
+  }
+  if(ref.col==='user_stats'){
+    const userStats=getLocal('presenzo_user_stats',{});
+    const cleanData={...data};
+    if(cleanData.updatedAt&&cleanData.updatedAt._serverTimestamp){
+      cleanData.updatedAt=new Date().toISOString();
+    }
+    const finalData=resolveIncrements(userStats[ref.id]||{},cleanData);
+    if(merge&&userStats[ref.id]){
+      userStats[ref.id]={...userStats[ref.id],...finalData};
+    }else{
+      userStats[ref.id]=finalData;
+    }
+    setLocal('presenzo_user_stats',userStats);
+  }
+  if(ref.col==='global_stats'){
+    const globalStats=getLocal('presenzo_global_stats',{});
+    const cleanData={...data};
+    if(cleanData.updatedAt&&cleanData.updatedAt._serverTimestamp){
+      cleanData.updatedAt=new Date().toISOString();
+    }
+    const finalData=resolveIncrements(globalStats[ref.id]||{},cleanData);
+    if(merge&&globalStats[ref.id]){
+      globalStats[ref.id]={...globalStats[ref.id],...finalData};
+    }else{
+      globalStats[ref.id]=finalData;
+    }
+    setLocal('presenzo_global_stats',globalStats);
+  }
+};
+
+const setDoc=async(ref,data,options)=>{
+  await new Promise(r=>setTimeout(r,40));
+  setDocSync(ref,data,options);
+  triggerFirestoreChange(ref.col,ref.id,ref.path);
+};
+
+const increment=(n)=>{
+  return{_increment:n};
+};
+
+const serverTimestamp=()=>{
+  return{_serverTimestamp:true};
+};
+
+const query=(colRef,...constraints)=>{
+  return{type:'query',path:colRef.path,colRef,constraints};
+};
+
+const where=(field,op,val)=>({type:'where',field,op,val});
+const orderBy=(field,dir)=>({type:'orderBy',field,dir});
+const limit=(n)=>({type:'limit',val:n});
+
+const getDocsSync=(queryRef)=>{
+  const path=queryRef.path;
+  if(path==='users'){
+    const users=getLocal('presenzo_users',{});
+    let list=Object.entries(users).map(([id,data])=>({id,data}));
+    if(queryRef.constraints){
+      queryRef.constraints.forEach(c=>{
+        if(c.type==='where'){
+          list=list.filter(item=>{
+            const fieldVal=item.data[c.field];
+            if(c.op==='==')return fieldVal===c.val;
+            return true;
+          });
+        }
+      });
+    }
+    return list.map(item=>({
+      id:item.id,
+      data:item.data,
+      ref:doc(db,'users',item.id)
+    }));
+  }
+  
+  if(path==='attendance'){
+    const attendance=getLocal('presenzo_attendance',{});
+    let list=Object.entries(attendance).map(([id,data])=>({id,data}));
+    if(queryRef.constraints){
+      queryRef.constraints.forEach(c=>{
+        if(c.type==='where'){
+          list=list.filter(item=>item.data[c.field]===c.val);
+        }
+        if(c.type==='orderBy'){
+          list.sort((a,b)=>{
+            const va=a.data[c.field]||'';
+            const vb=b.data[c.field]||'';
+            if(c.dir==='desc')return vb.localeCompare(va);
+            return va.localeCompare(vb);
+          });
+        }
+        if(c.type==='limit'){
+          list=list.slice(0,c.val);
+        }
+      });
+    }
+    return list.map(item=>({
+      id:item.id,
+      data:item.data,
+      ref:doc(db,'attendance',item.id)
+    }));
+  }
+  
+  if(path.startsWith('chats/')&&path.endsWith('/messages')){
+    const roomId=path.split('/')[1];
+    const chats=getLocal('presenzo_chats',{});
+    const list=chats[roomId]||[];
+    let listWithId=list.map((msg,idx)=>{
+      const data={...msg};
+      if(data.createdAt)data.createdAt=wrapTimestamp(data.createdAt);
+      return{id:`msg_${idx}`,data};
+    });
+    if(queryRef.constraints){
+      queryRef.constraints.forEach(c=>{
+        if(c.type==='orderBy'){
+          listWithId.sort((a,b)=>{
+            const va=a.data[c.field]?new Date(a.data[c.field].toDate()):0;
+            const vb=b.data[c.field]?new Date(b.data[c.field].toDate()):0;
+            if(c.dir==='desc')return vb-va;
+            return va-vb;
+          });
+        }
+        if(c.type==='limit'){
+          listWithId=listWithId.slice(0,c.val);
+        }
+      });
+    }
+    return listWithId.map(item=>({
+      id:item.id,
+      data:item.data,
+      ref:doc(db,'chats',`${roomId}/messages`,item.id)
+    }));
+  }
+  
+  return [];
+};
+
+const getDocs=async(queryRef)=>{
+  await new Promise(r=>setTimeout(r,40));
+  const docs=getDocsSync(queryRef);
+  return{
+    empty:docs.length===0,
+    docs,
+    forEach:(cb)=>docs.forEach((d,idx)=>cb(d,idx))
+  };
+};
+
+const addDoc=async(colRef,data)=>{
+  await new Promise(r=>setTimeout(r,50));
+  const path=colRef.path;
+  if(path.startsWith('chats/')&&path.endsWith('/messages')){
+    const roomId=path.split('/')[1];
+    const chats=getLocal('presenzo_chats',{});
+    if(!chats[roomId])chats[roomId]=[];
+    const msg={...data};
+    if(msg.createdAt&&msg.createdAt._serverTimestamp){
+      msg.createdAt=new Date().toISOString();
+    }
+    chats[roomId].push(msg);
+    setLocal('presenzo_chats',chats);
+    triggerFirestoreChange('chats',roomId,path);
+    return{id:`msg_${chats[roomId].length-1}`};
+  }
+  return{id:'mock_id'};
+};
+
+const firestoreListeners=[];
+const registerFirestoreListener=(type,targetRef,callback)=>{
+  const listener={type,targetRef,callback};
+  firestoreListeners.push(listener);
+  return()=>{
+    const idx=firestoreListeners.indexOf(listener);
+    if(idx!==-1)firestoreListeners.splice(idx,1);
+  };
+};
+
+const triggerFirestoreChange=(colName,docId,path)=>{
+  firestoreListeners.forEach(l=>{
+    let matches=false;
+    if(l.type==='doc'){
+      matches=l.targetRef.col===colName&&l.targetRef.id===docId;
+    }else{
+      matches=l.targetRef.path===path||(path&&path.startsWith(l.targetRef.path));
+    }
+    if(matches){
+      setTimeout(()=>{
+        try{l.callback();}catch(e){console.error(e);}
+      },5);
+    }
+  });
+};
+
+const onSnapshot=(refOrQuery,onNext,onError)=>{
+  const type=refOrQuery.type||'query';
+  const callback=()=>{
+    try{
+      if(type==='doc'){
+        const val=getDocValueSync(refOrQuery);
+        onNext({
+          exists:()=>val!==null,
+          data:()=>val,
+          id:refOrQuery.id
+        });
+      }else{
+        const docs=getDocsSync(refOrQuery);
+        onNext({
+          empty:docs.length===0,
+          docs,
+          forEach:(cb)=>docs.forEach((d,idx)=>cb(d,idx))
+        });
+      }
+    }catch(e){
+      if(onError)onError(e);
+      else console.error(e);
+    }
+  };
+  const unsub=registerFirestoreListener(type,refOrQuery,callback);
+  setTimeout(callback,0);
+  return unsub;
+};
+
+const writeBatch=(dbObj)=>{
+  const ops=[];
+  return{
+    delete:(ref)=>{
+      ops.push({action:'delete',ref});
+    },
+    commit:async()=>{
+      await new Promise(r=>setTimeout(r,60));
+      ops.forEach(op=>{
+        const ref=op.ref;
+        if(ref&&ref.col==='chats'){
+          const roomId=ref.path.split('/')[1];
+          const chats=getLocal('presenzo_chats',{});
+          if(chats[roomId]){
+            chats[roomId]=[];
+            setLocal('presenzo_chats',chats);
+            triggerFirestoreChange('chats',roomId,`chats/${roomId}/messages`);
+          }
+        }
+      });
+    }
+  };
+};
+
+const runTransaction=async(dbObj,callback)=>{
+  await new Promise(r=>setTimeout(r,100));
+  const writtenDocs=[];
+  const tx={
+    get:async(docRef)=>{
+      const val=getDocValueSync(docRef);
+      return{
+        exists:()=>val!==null,
+        data:()=>val,
+        id:docRef.id
+      };
+    },
+    set:(docRef,data,options)=>{
+      setDocSync(docRef,data,options);
+      writtenDocs.push(docRef);
+    }
+  };
+  await callback(tx);
+  writtenDocs.forEach(ref=>{
+    triggerFirestoreChange(ref.col,ref.id,ref.path);
+  });
+};
+
+// Mock Storage
+const storage={};
+const storageFiles={};
+
+const sr=(storageObj,path)=>({type:'storage_ref',path});
+
+const uploadBytesResumable=(storageRef,file)=>{
+  let pct=0;
+  const task={
+    on:(event,progressCb,errorCb,completeCb)=>{
+      const interval=setInterval(()=>{
+        pct+=20;
+        progressCb({
+          bytesTransferred:(pct/100)*file.size,
+          totalBytes:file.size
+        });
+        if(pct>=100){
+          clearInterval(interval);
+          const url=URL.createObjectURL(file);
+          storageFiles[storageRef.path]=url;
+          setTimeout(completeCb,20);
+        }
+      },80);
+    },
+    snapshot:{
+      ref:storageRef
+    }
+  };
+  return task;
+};
+
+const getDownloadURL=async(storageRef)=>{
+  return storageFiles[storageRef.path]||'https://images.unsplash.com/photo-1546410531-bb4caa6b424d?q=80&w=1000';
+};
 
 let me=null,prof=null,role='student',mode='login';
 let localAtt={},students=[],chatUnsub=null,chatRoom=null,chatType=null,allUsers=[];
@@ -556,33 +1075,51 @@ const toast=msg=>{const t=$('toast');if(!t)return;t.textContent=msg;t.classList.
 const showE=(id,msg)=>{const e=$(id);if(!e)return;e.querySelector('span:last-child').textContent=msg;e.style.display='flex';e.classList.add('on');};
 const hideE=(id)=>{const e=$(id);if(e){e.style.display='none';e.classList.remove('on');}};
 const showS=(id,msg)=>{const e=$(id);if(!e)return;e.querySelector('span:last-child').textContent=msg;e.style.display='flex';e.classList.add('on');};
-const busy=(btn,sp,txt,b,lbl)=>{const el=$(btn);if(!el)return;el.disabled=b;if($(sp))$(sp).style.display=b?'block':'none';if($(txt))$(txt).textContent=lbl;};
+const busy=(btn,sp,txt,b,lbl)=>{
+  const el=$(btn);
+  if(!el)return;
+  el.disabled=b;
+  if($(sp))$(sp).style.display=b?'block':'none';
+  if($(txt))$(txt).textContent=lbl;
+  const inputs=['le','lp','rn','re','rp','rc'];
+  inputs.forEach(id=>{const inp=$(id);if(inp)inp.disabled=b;});
+  const buttons=['lbtn','rbtn','tabS','tabT','aLg','aRg'];
+  buttons.forEach(id=>{const btnEl=$(id);if(btnEl&&id!==btn)btnEl.disabled=b;});
+};
 
-window.switchRole=r=>{role=r;$('tabS').classList.toggle('on',r==='student');$('tabT').classList.toggle('on',r==='teacher');$('rclsf').style.display=r==='student'?'block':'none';hideE('err');};
+window.switchRole=r=>{
+  if($('lbtn').disabled||$('rbtn').disabled)return;
+  role=r;$('tabS').classList.toggle('on',r==='student');$('tabT').classList.toggle('on',r==='teacher');$('rclsf').style.display=r==='student'?'block':'none';hideE('err');
+};
 window.switchMode=m=>{
+  if($('lbtn').disabled||$('rbtn').disabled)return;
   mode=m;$('aLg').classList.toggle('on',m==='login');$('aRg').classList.toggle('on',m==='register');
   $('loginForm').style.display=m==='login'?'block':'none';$('regForm').style.display=m==='register'?'block':'none';
   hideE('err');hideE('suc');hideE('rerr');hideE('rsuc');
 };
 window.eye=(id,btn)=>{const i=$(id);i.type=i.type==='password'?'text':'password';btn.textContent=i.type==='password'?'👁️':'🙈';};
 
-window.doLogin=async()=>{
+window.doLogin=()=>{
   const e=$('le').value.trim(),p=$('lp').value;
   if(!e||!p){showE('err','Please fill in all fields.');return;}
   hideE('err');hideE('suc');busy('lbtn','lsp','ltxt',true,'Signing in…');
-  try{await signInWithEmailAndPassword(auth,e,p);}
-  catch(ex){showE('err',errM[ex.code]||'Something went wrong.');busy('lbtn','lsp','ltxt',false,'Sign In');}
+  setTimeout(async()=>{
+    try{await signInWithEmailAndPassword(auth,e,p);}
+    catch(ex){showE('err',errM[ex.code]||'Something went wrong.');busy('lbtn','lsp','ltxt',false,'Sign In');}
+  },0);
 };
-window.doRegister=async()=>{
+window.doRegister=()=>{
   const n=$('rn').value.trim(),e=$('re').value.trim(),p=$('rp').value,cls=$('rc').value;
   if(!n||!e||!p){showE('rerr','Please fill in all fields.');return;}
   if(p.length<6){showE('rerr','Password must be at least 6 characters.');return;}
   hideE('rerr');busy('rbtn','rsp','rtxt',true,'Creating account…');
-  try{
-    const c=await createUserWithEmailAndPassword(auth,e,p);
-    await setDoc(doc(db,'users',c.user.uid),{name:n,email:e,role,cls:role==='student'?cls:null,createdAt:serverTimestamp()});
-    showS('rsuc','Account created! Welcome to Presenzo 🎉');busy('rbtn','rsp','rtxt',false,'Create Account');
-  }catch(ex){showE('rerr',errM[ex.code]||'Something went wrong.');busy('rbtn','rsp','rtxt',false,'Create Account');}
+  setTimeout(async()=>{
+    try{
+      const c=await createUserWithEmailAndPassword(auth,e,p);
+      await setDoc(doc(db,'users',c.user.uid),{name:n,email:e,role,cls:role==='student'?cls:null,createdAt:serverTimestamp()});
+      showS('rsuc','Account created! Welcome to Presenzo 🎉');busy('rbtn','rsp','rtxt',false,'Create Account');
+    }catch(ex){showE('rerr',errM[ex.code]||'Something went wrong.');busy('rbtn','rsp','rtxt',false,'Create Account');}
+  },0);
 };
 window.doLogout=async()=>{clrU();closeChat();allUsers=[];me=null;prof=null;try{await signOut(auth);}catch{}};
 
@@ -600,11 +1137,14 @@ onAuthStateChanged(auth,async user=>{
     }catch(err){
       console.error(err);toast('⚠️ Connection error. Check your internet.');
       $('appPage').style.display='none';$('loginPage').style.display='flex';
-    }finally{if(ld)ld.classList.add('gone');busy('lbtn','lsp','ltxt',false,'Sign In');}
+    }finally{
+      if(ld)requestAnimationFrame(()=>ld.classList.add('gone'));
+      busy('lbtn','lsp','ltxt',false,'Sign In');
+    }
   }else{
     $('appPage').style.display='none';$('loginPage').style.display='flex';
     busy('lbtn','lsp','ltxt',false,'Sign In');busy('rbtn','rsp','rtxt',false,'Create Account');
-    if(ld)setTimeout(()=>ld.classList.add('gone'),350);
+    if(ld)requestAnimationFrame(()=>ld.classList.add('gone'));
   }
 });
 
@@ -626,7 +1166,12 @@ function buildApp(){
     if($('nb2'))$('nb2').style.display='flex';
     if($('tctrl'))$('tctrl').style.display='block';
     if($('sview'))$('sview').style.display='none';
-    if($('dateSel'))$('dateSel').value=new Date().toISOString().split('T')[0];
+    if($('dateSel')){
+      const now=new Date();
+      const offset=now.getTimezoneOffset();
+      const local=new Date(now.getTime()-(offset*60*1000));
+      $('dateSel').value=local.toISOString().split('T')[0];
+    }
     loadStudents();
   }else{
     if($('tctrl'))$('tctrl').style.display='none';
@@ -637,11 +1182,18 @@ function buildApp(){
 }
 
 window.goPage=idx=>{
+  clrU();
   document.querySelectorAll('.pg').forEach((p,i)=>p.classList.toggle('on',i===idx));
   document.querySelectorAll('.nb').forEach((b,i)=>b.classList.toggle('on',i===idx));
   if(idx!==0)$('savebar').classList.remove('on');
   else if(prof?.role==='teacher')updSB();
-  if(idx===2)loadReg();
+  
+  if(idx===0){
+    if(prof?.role==='teacher')loadStudents();
+    else if(prof?.role==='student'){loadMyStats();loadMyAtt();}
+  }else if(idx===2){
+    loadReg();
+  }
 };
 window.setCTab=t=>{
   $('ct0').classList.toggle('on',t===0);$('ct1').classList.toggle('on',t===1);
@@ -667,11 +1219,12 @@ async function loadDMUsers(){
 const dmId=(a,b)=>[a,b].sort().join('__');
 
 window.openChat=(type,id,name)=>{
+  if(!me||!id)return;
   chatRoom=id;chatType=type;
   const room=type==='dm'?dmId(me.uid,id):id;
   $('cwn').textContent=name;
   const cws=$('cws');cws.textContent=type==='dm'?'🔒 Private':'● Live';cws.className='cws '+(type==='dm'?'prv':'live');
-  $('cwin').classList.add('open');$('marea').innerHTML='<div class="empty"><div class="ei">💬</div>Loading messages…</div>';
+  $('cwin').style.display='flex';$('marea').innerHTML='<div class="empty"><div class="ei">💬</div>Loading messages…</div>';
   $('minput').value='';
   if(chatUnsub)try{chatUnsub();}catch{}
   const q=query(collection(db,'chats',room,'messages'),orderBy('createdAt','asc'),limit(100));
@@ -682,7 +1235,7 @@ window.openChat=(type,id,name)=>{
       const m=d.data(),isMe=m.uid===me.uid,t=fmtT(m.createdAt);
       const sndr=!isMe&&type==='group'?`<div class="msndr">${esc(m.name||'')}</div>`:'';
       if(m.type==='image'){
-        return`<div class="mb fmb ${isMe?'me':'them'}">${sndr}<img class="msg-img" src="${esc(m.url)}" alt="Image" onclick="openImgV('${esc(m.url)}')" loading="lazy"/><div class="mtime">${t}</div></div>`;
+        return`<div class="mb fmb ${isMe?'me':'them'}">${sndr}<img class="msg-img" src="${esc(m.url)}" alt="Image" onclick="openImgV('${esc(m.url)}')" onload="const a=$('marea');if(a)requestAnimationFrame(()=>a.scrollTop=a.scrollHeight);" loading="lazy"/><div class="mtime">${t}</div></div>`;
       }else if(m.type==='pdf'){
         return`<div class="mb fmb ${isMe?'me':'them'}">${sndr}<div class="fcard" onclick="window.open('${esc(m.url)}','_blank')"><span class="f-ico">📄</span><div><div class="f-nm">${esc(m.fileName||'Document.pdf')}</div><div class="f-sz">${m.fileSize?fmtB(m.fileSize):''} · Tap to open PDF</div></div></div><div class="mtime">${t}</div></div>`;
       }else{
@@ -690,11 +1243,11 @@ window.openChat=(type,id,name)=>{
       }
     }).join('');
     requestAnimationFrame(()=>area.scrollTop=area.scrollHeight);
-  },err=>{console.error(err);$('marea').innerHTML='<div class="empty"><div class="ei">⚠️</div>Could not load messages.</div>';});
+  },err=>{console.error("Error loading messages: ",err);$('marea').innerHTML='<div class="empty"><div class="ei">⚠️</div>Could not load messages.</div>';});
 };
 
 function closeChat(){
-  $('cwin').classList.remove('open');
+  $('cwin').style.display='none';
   if(chatUnsub){try{chatUnsub();}catch{}chatUnsub=null;}
   chatRoom=null;chatType=null;$('minput').value='';$('minput').style.height='auto';
 }
@@ -702,7 +1255,7 @@ window.closeChat=closeChat;
 
 window.sendMsg=async()=>{
   const ta=$('minput'),txt=ta.value.trim();
-  if(!txt||!chatRoom)return;
+  if(!txt||!chatRoom||!me)return;
   const old=txt;ta.value='';ta.style.height='auto';
   const room=chatType==='dm'?dmId(me.uid,chatRoom):chatRoom;
   try{await addDoc(collection(db,'chats',room,'messages'),{text:txt,type:'text',uid:me.uid,name:prof.name,role:prof.role,createdAt:serverTimestamp()});}
@@ -711,6 +1264,7 @@ window.sendMsg=async()=>{
 
 window.handleFile=async input=>{
   const file=input.files[0];input.value='';if(!file)return;
+  if(!chatRoom||!me){toast('❌ No active chat session.');return;}
   if(file.size>MAX){toast('❌ File too large!\nMax 15 MB. This file is '+fmtB(file.size)+'.');return;}
   const isImg=file.type.startsWith('image/'),isPdf=file.type==='application/pdf';
   if(!isImg&&!isPdf){toast('❌ Only images and PDF files are supported.');return;}
@@ -721,14 +1275,24 @@ window.handleFile=async input=>{
   const bar=$('upbar'),fill=$('upfill');
   bar.classList.add('on');fill.style.width='0%';
   task.on('state_changed',
-    s=>{fill.style.width=(s.bytesTransferred/s.totalBytes*100).toFixed(1)+'%';},
-    err=>{bar.classList.remove('on');fill.style.width='0%';toast('❌ Upload failed:\n'+err.message);},
-    async()=>{
+    s=>{
+      const pct=s.totalBytes>0?(s.bytesTransferred/s.totalBytes*100).toFixed(1):0;
+      fill.style.width=pct+'%';
+    },
+    err=>{
       bar.classList.remove('on');fill.style.width='0%';
+      toast('❌ Upload failed:\n'+err.message);
+    },
+    async()=>{
       try{
+        fill.style.width='100%';
         const url=await getDownloadURL(task.snapshot.ref);
         await addDoc(collection(db,'chats',room,'messages'),{type:isImg?'image':'pdf',url,fileName:file.name,fileSize:file.size,uid:me.uid,name:prof.name,role:prof.role,createdAt:serverTimestamp()});
-      }catch(e){toast('❌ Could not save file:\n'+e.message);}
+      }catch(e){
+        toast('❌ Could not save file:\n'+e.message);
+      }finally{
+        bar.classList.remove('on');fill.style.width='0%';
+      }
     }
   );
 };
@@ -753,8 +1317,31 @@ window.loadStudents=()=>{
   clrU();
   if(!date){$('attWrap').innerHTML='<div class="empty"><div class="ei">📅</div><p>Please select a date first</p></div>';return;}
   $('attWrap').innerHTML='<div class="empty"><div class="ei">⏳</div>Syncing…</div>';
-  pgUnsubs.push(onSnapshot(query(collection(db,'users'),where('role','==','student'),where('cls','==',cls)),snap=>{students=snap.docs.map(d=>({id:d.id,...d.data()}));renderMark();}));
-  pgUnsubs.push(onSnapshot(doc(db,'attendance',cls+'_'+date),snap=>{localAtt=snap.exists()?snap.data().students||{}: {};renderMark();}));
+  const unsubUsers=onSnapshot(
+    query(collection(db,'users'),where('role','==','student'),where('cls','==',cls)),
+    snap=>{
+      students=snap.docs.map(d=>({id:d.id,...d.data()}));
+      renderMark();
+    },
+    err=>{
+      console.error("Error loading students: ",err);
+      $('attWrap').innerHTML='<div class="empty"><div class="ei">⚠️</div>Could not load student registry.</div>';
+    }
+  );
+  pgUnsubs.push(unsubUsers);
+
+  const unsubAtt=onSnapshot(
+    doc(db,'attendance',cls+'_'+date),
+    snap=>{
+      localAtt=snap.exists()?snap.data().students||{}:{};
+      renderMark();
+    },
+    err=>{
+      console.error("Error loading attendance: ",err);
+      toast('⚠️ Failed to sync live attendance updates.');
+    }
+  );
+  pgUnsubs.push(unsubAtt);
 };
 
 function renderMark(){
@@ -771,6 +1358,7 @@ function updSB(){$('savebar').classList.toggle('on',Object.keys(localAtt).length
 window.saveAtt=async()=>{
   const cls=$('clsSel').value,date=$('dateSel').value;
   if(!date){toast('❌ Please select a date first.');return;}
+  if(!students.length){toast('❌ No students loaded in this section.');return;}
   const btn=$('svbtn');if(btn)btn.disabled=true;
   try{
     await runTransaction(db,async tx=>{
@@ -786,16 +1374,15 @@ window.saveAtt=async()=>{
       }
       tx.set(doc(db,'global_stats',date),{present:increment(dP),absent:increment(dA),updatedAt:serverTimestamp()},{merge:true});
       for(const sid in dl)tx.set(doc(db,'user_stats',sid),{attended:increment(dl[sid].p),missed:increment(dl[sid].a),classesHeld:increment(dl[sid].h),updatedAt:serverTimestamp()},{merge:true});
-      tx.set(ref,{class:cls,date,students:localAtt,savedBy:me.uid,savedAt:serverTimestamp(),meta:{v:'2.0',app:'Presenzo',dev:'M. Sameer Khan'}});
+      tx.set(ref,{class:cls,date,students:localAtt,savedBy:me.uid,savedAt:serverTimestamp(),meta:{v:'2.0',app:'Presenzo',dev:'UZAIR KHAN'}});
     });
     toast('✅ Attendance saved to database!');$('savebar').classList.remove('on');
-  }catch(e){console.error(e);toast('❌ Save failed:\n'+e.message);}
+  }catch(e){console.error("Save transaction failed: ",e);toast('❌ Save failed:\n'+e.message);}
   finally{if(btn)btn.disabled=false;}
 };
 
-async function loadMyStats(){
-  try{
-    const snap=await getDoc(doc(db,'user_stats',me.uid));
+function loadMyStats(){
+  const unsub=onSnapshot(doc(db,'user_stats',me.uid),snap=>{
     if(snap.exists()){
       const d=snap.data(),tot=d.classesHeld||0,pres=d.attended||0,rate=tot>0?Math.round(pres/tot*100):0;
       if($('myrate'))$('myrate').textContent=rate+'%';
@@ -805,19 +1392,27 @@ async function loadMyStats(){
       if($('myrate'))$('myrate').textContent='0%';if($('mybar'))$('mybar').style.width='0%';
       if($('myrsub'))$('myrsub').textContent='No records yet';
     }
-  }catch(e){console.error(e);}
+  },err=>{
+    console.error("Error loading stats: ",err);
+    if($('myrate'))$('myrate').textContent='—%';
+  });
+  pgUnsubs.push(unsub);
 }
 
-async function loadMyAtt(){
-  try{
-    const cls=prof.cls||'PHY-A';
-    const snap=await getDocs(query(collection(db,'attendance'),where('class','==',cls),orderBy('date','desc'),limit(30)));
+function loadMyAtt(){
+  const cls=prof.cls||'PHY-A';
+  const q=query(collection(db,'attendance'),where('class','==',cls),orderBy('date','desc'),limit(30));
+  const unsub=onSnapshot(q,snap=>{
     const recs=[];
     snap.forEach(d=>{const data=d.data();if(data.students&&data.students[me.uid])recs.push({date:data.date,cls:data.class,status:data.students[me.uid]});});
     $('alog').innerHTML=recs.length===0
       ?'<div class="empty"><div class="ei">📅</div>No attendance records yet.</div>'
       :recs.map(r=>`<div class="lrow"><div><div style="font-size:13px;font-weight:600">${fmtD(r.date)}</div><div style="font-size:11px;color:var(--mt2)">${r.cls}</div></div><span class="sstat ${r.status}">${r.status==='present'?'✅ Present':'❌ Absent'}</span></div>`).join('');
-  }catch{$('alog').innerHTML='<div class="empty"><div class="ei">⚠️</div>Could not load records.</div>';}
+  },err=>{
+    console.error("Error loading attendance history: ",err);
+    $('alog').innerHTML='<div class="empty"><div class="ei">⚠️</div>Could not load records.</div>';
+  });
+  pgUnsubs.push(unsub);
 }
 
 async function loadReg(){
